@@ -36,7 +36,7 @@ public class Plant
     public WateringBenchmark WateringGeneralBenchmark { get; set; }
 
     [BsonElement("sunlight")]
-    public string Sunlight { get; set; }
+    public List<string> Sunlight { get; set; }
 
     [BsonElement("house_id")]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -62,9 +62,9 @@ public class Plant
     public string Description { get; set; }
 
     [BsonElement("poisonous_to_humans")]
-    public string PoisonousToHumans { get; set; }
+    public bool PoisonousToHumans { get; set; }
     
     [BsonElement("poisonous_to_pets")]
-    public string PoisonousToPets { get; set; }
+    public bool PoisonousToPets { get; set; }
 
 }

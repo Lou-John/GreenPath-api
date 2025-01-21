@@ -1,5 +1,6 @@
 
 using GreenPath.Models;
+using GreenPath.Services;
 
 namespace GreenPath
 {
@@ -12,6 +13,8 @@ namespace GreenPath
             // Add services to the container.
             builder.Services.Configure<DatabaseSettings>(
                 builder.Configuration.GetSection("PlantDatabase"));
+
+            builder.Services.AddSingleton<PlantsService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
