@@ -19,10 +19,6 @@ public class House
     [BsonRepresentation(BsonType.ObjectId)]
     public List<string> Plants { get; set; }
 
-    [BsonElement("shared_with")]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public List<string> SharedWith { get; set; }
-
     [BsonElement("created_at")]
     [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

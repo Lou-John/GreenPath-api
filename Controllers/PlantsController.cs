@@ -20,10 +20,12 @@ namespace GreenPath.Controllers
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Plant>> Get(string id)
         {
+            // Check if plant exists in local database
             var plant = await _plantsService.GetAsync(id);
 
             if (plant is null)
             {
+                // If plant is not found, call external API to get the plant
                 return NotFound();
             }
 

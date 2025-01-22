@@ -1,6 +1,6 @@
 @GreenPath_HostAddress = http://localhost:5211
 
-GET {{GreenPath_HostAddress}}/weatherforecast/
+GET {{GreenPath_HostAddress}}/plant/
 Accept: application/json
 
 ###

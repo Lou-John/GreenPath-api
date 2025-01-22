@@ -10,9 +10,15 @@
 *.userosscache
 *.sln.docstates
 
-# Env file
-.env
+# Ignore appsettings.json and appsettings.Development.json
 appsettings.json
+appsettings.Development.json
+
+# Ignore any other environment-specific appsettings files
+appsettings.*.json
+
+# If you're using secrets.json for development
+secrets.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

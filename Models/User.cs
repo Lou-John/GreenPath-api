@@ -16,6 +16,10 @@ public class User
     [BsonElement("password_hash")]
     public string PasswordHash { get; set; }
 
-    [BsonElement("icon_uri")]
-    public string IconUri { get; set; }
+    [BsonElement("icon_url")]
+    public string IconUrl { get; set; }
+
+    [BsonElement("house_ids")]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public List<string> HouseIds { get; set; } = new List<string>();
 }

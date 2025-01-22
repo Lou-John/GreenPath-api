@@ -41,10 +41,6 @@ public class Plant
     [BsonElement("sunlight")]
     public List<string> Sunlight { get; set; }
 
-    [BsonElement("house_id")]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string HouseId { get; set; }
-
     [BsonElement("pruning_month")]
     public List<string> PruningMonth { get; set; }
 
