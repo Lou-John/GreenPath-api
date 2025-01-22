@@ -17,6 +17,9 @@ public class Plant
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; }
 
+    [BsonElement("id")]
+    public string OriginalId { get; set; }
+
     [BsonElement("common_name")]
     public string CommonName { get; set; }
 

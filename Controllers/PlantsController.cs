@@ -20,14 +20,14 @@ namespace GreenPath.Controllers
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<Plant>> Get(string id)
         {
-            var book = await _plantsService.GetAsync(id);
+            var plant = await _plantsService.GetAsync(id);
 
-            if (book is null)
+            if (plant is null)
             {
                 return NotFound();
             }
 
-            return book;
+            return plant;
         }
 
         [HttpPost]
@@ -58,9 +58,9 @@ namespace GreenPath.Controllers
         [HttpDelete("{id:length(24)}")]
         public async Task<IActionResult> Delete(string id)
         {
-            var book = await _plantsService.GetAsync(id);
+            var plant = await _plantsService.GetAsync(id);
 
-            if (book is null)
+            if (plant is null)
             {
                 return NotFound();
             }
