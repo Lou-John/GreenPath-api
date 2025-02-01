@@ -17,17 +17,14 @@ public class Plant
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; }
 
-    [BsonElement("id")]
-    public string OriginalId { get; set; }
+    [BsonElement("external_id")]
+    public string ExternalId { get; set; }
 
     [BsonElement("common_name")]
     public string CommonName { get; set; }
 
     [BsonElement("scientific_name")]
     public string ScientificName { get; set; }
-
-    [BsonElement("quantity")]
-    public int Quantity { get; set; }
 
     [BsonElement("watering")]
     public string Watering { get; set; }
@@ -43,10 +40,6 @@ public class Plant
 
     [BsonElement("pruning_month")]
     public List<string> PruningMonth { get; set; }
-
-    [BsonElement("last_watered")]
-    [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
-    public DateTime LastWatered { get; set; }
 
     [BsonElement("flowers")]
     public bool Flowers{ get; set; }

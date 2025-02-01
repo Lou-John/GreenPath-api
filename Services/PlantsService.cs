@@ -28,6 +28,9 @@ namespace GreenPath.Services
         public async Task<Plant?> GetAsync(string id) =>
             await _plantsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
+        public async Task<Plant?> GetByExternalIdAsync(string externalId) =>
+            await _plantsCollection.Find(x => x.ExternalId == externalId).FirstOrDefaultAsync();
+
         public async Task CreateAsync(Plant newPlant) =>
             await _plantsCollection.InsertOneAsync(newPlant);
 

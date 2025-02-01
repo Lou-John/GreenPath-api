@@ -15,6 +15,8 @@ namespace GreenPath
                 builder.Configuration.GetSection("PlantDatabase"));
 
             builder.Services.AddSingleton<PlantsService>();
+            builder.Services.AddSingleton<UsersService>();
+            builder.Services.AddSingleton<HousesService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
