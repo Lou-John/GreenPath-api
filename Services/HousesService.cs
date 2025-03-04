@@ -1,6 +1,7 @@
 ﻿using GreenPath.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace GreenPath.Services
@@ -8,6 +9,8 @@ namespace GreenPath.Services
     public class HousesService
     {
         private readonly IMongoCollection<House> _housesCollection;
+        private readonly IMongoCollection<Plant> _plantsCollection;
+
 
         public HousesService(
             IOptions<DatabaseSettings> databaseSettings)
@@ -30,8 +33,20 @@ namespace GreenPath.Services
 
         internal async Task<List<House>> GetByUserIdAsync(string userId)
         {
-            var filter = Builders<House>.Filter.AnyEq(x => x.UserIds, userId);
+            var filter = Builders<House>.Filter.AnyEq(h => h.UserIds, userId);
             return await _housesCollection.Find(filter).ToListAsync();
+        }
+
+        public async Task<List<Plant>> GetPlantsByHouseIdAsync(string houseId)
+        {
+            // Get the house first
+            var house = await _housesCollection.Find(h => h.Id == houseId).FirstOrDefaultAsync();
+            if (house == null || house.Plants == null || !house.Plants.Any())
+                return new List<Plant>();
+
+            // Filter to find plants where their IDs are in the house's Plants list
+            var filter = Builders<Plant>.Filter.In(p => p.Id, house.Plants);
+            return await _plantsCollection.Find(filter).ToListAsync();
         }
 
         public async Task CreateAsync(House newHouse) =>

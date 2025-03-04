@@ -5,7 +5,7 @@ public class User
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     [BsonElement("nickname")]
     public string Nickname { get; set; }
@@ -20,6 +20,5 @@ public class User
     public string IconUrl { get; set; }
 
     [BsonElement("house_ids")]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public List<string> HouseIds { get; set; } = new List<string>();
+    public List<string> HouseIds { get; set; }
 }

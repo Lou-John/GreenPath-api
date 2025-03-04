@@ -32,6 +32,8 @@ namespace GreenPath.Controllers
             return plant;
         }
 
+
+
         [HttpGet("external/{externalId}")]
         public async Task<ActionResult<Plant>> GetByExternalId(string externalId)
         {

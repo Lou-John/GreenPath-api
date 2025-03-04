@@ -45,6 +45,16 @@ namespace GreenPath.Controllers
             return house;
         }
 
+        [HttpGet("{houseId}/plants")]
+        public async Task<IActionResult> GetPlantsForHouse(string houseId)
+        {
+            var plants = await _housesService.GetPlantsByHouseIdAsync(houseId);
+            if (plants == null || !plants.Any())
+                return NotFound("No plants found for this house.");
+
+            return Ok(plants);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(House newHouse)
         {

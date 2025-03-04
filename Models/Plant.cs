@@ -15,7 +15,7 @@ public class Plant
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string Id { get; set; }
+    public string? Id { get; set; }
 
     [BsonElement("external_id")]
     public string ExternalId { get; set; }

@@ -1,6 +1,6 @@
-@GreenPath_HostAddress = http://localhost:5211
+@GreenPath_HostAddress = https://localhost:7071
 
-GET {{GreenPath_HostAddress}}/plant/
+GET {{GreenPath_HostAddress}}api/Plants/
 Accept: application/json
 
 ###
