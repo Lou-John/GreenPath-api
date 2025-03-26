@@ -28,9 +28,9 @@ Pour installer GreenPath localement :
    cd GreenPath
    ```
 3. **Construire le projet** :
-   Utilisez votre environnement de développement C# préféré pour compiler les fichiers du projet.
-4. **Exécuter l'application** :
-   Lancez l'application depuis votre environnement de développement pour commencer à utiliser GreenPath.
+   ```bash
+   dotnet build
+   ```
 
 ## Licence
 
