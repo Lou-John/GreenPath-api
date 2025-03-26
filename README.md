@@ -6,10 +6,9 @@ La source des données est l'api [Perenual](https://perenual.com/docs/api).
 
 ## Fonctionnalités
 
-- **Rappels d'entretien des plantes** : Programmez des notifications pour l'arrosage, la fertilisation et d'autres tâches de maintenance afin de maintenir vos plantes en bonne santé.
-- **Base de données de plantes** : Accédez à une collection exhaustive d'espèces végétales avec des instructions détaillées sur leur entretien.
-- **Calendriers personnalisables** : Adaptez les routines d'entretien aux besoins spécifiques de chaque plante de votre collection.
-- **Interface conviviale** : Profitez d'une navigation aisée grâce à une conception intuitive et visuellement attrayante.
+- **Rappels d'entretien des plantes** : Programmez des notifications pour l'arrosage, la fertilisation et d'autres tâches de maintenance afin de maintenir vos plantes en bonne santé. 🚨
+- **Base de données de plantes** : Accédez à une collection exhaustive d'espèces végétales avec des instructions détaillées sur leur entretien. 📖
+- **Calendriers personnalisables** : Adaptez les routines d'entretien aux besoins spécifiques de chaque plante de votre collection. 📅
 
 ## Prototype Figma
 
