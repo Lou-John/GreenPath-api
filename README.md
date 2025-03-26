@@ -2,6 +2,8 @@
 
 GreenPath est une application conçue pour aider les utilisateurs à gérer efficacement l'entretien de leurs plantes. En fournissant des rappels opportuns et des informations essentielles, GreenPath garantit que vos plantes reçoivent l'attention nécessaire pour s'épanouir.
 
+La source des données est l'api [Perenual](https://perenual.com/docs/api).
+
 ## Fonctionnalités
 
 - **Rappels d'entretien des plantes** : Programmez des notifications pour l'arrosage, la fertilisation et d'autres tâches de maintenance afin de maintenir vos plantes en bonne santé.
@@ -37,5 +39,3 @@ Pour installer GreenPath localement :
 Ce projet est sous licence [Unlicense](https://github.com/Lou-John/GreenPath/blob/master/LICENSE.txt), permettant une utilisation, une modification et une distribution sans restriction.
 
 ---
-
-Pour plus d'informations et pour contribuer au projet, visitez le [dépôt GitHub de GreenPath](https://github.com/Lou-John/GreenPath). 
