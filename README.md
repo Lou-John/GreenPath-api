@@ -4,6 +4,8 @@ GreenPath est une application conçue pour aider les utilisateurs à gérer effi
 
 La source des données est l'api [Perenual](https://perenual.com/docs/api).
 
+L'app est séparée en trois services conteneurisés sur Docker.
+
 ## Fonctionnalités
 
 - **Rappels d'entretien des plantes** : Programmez des notifications pour l'arrosage, la fertilisation et d'autres tâches de maintenance afin de maintenir vos plantes en bonne santé. 🚨
