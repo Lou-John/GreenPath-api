@@ -1,4 +1,4 @@
-@GreenPath_HostAddress = https://localhost:7071
+@GreenPath_HostAddress = http://localhost:8080
 
 GET {{GreenPath_HostAddress}}api/Plants/
 Accept: application/json

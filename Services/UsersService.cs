@@ -20,6 +20,9 @@ namespace GreenPath.Services
 
             _usersCollection = mongoDatabase.GetCollection<User>(
                 databaseSettings.Value.UsersCollectionName);
+
+            Console.WriteLine($"Connecting to MongoDB at: {databaseSettings.Value.ConnectionString}");
+            Console.WriteLine($"Using database: {databaseSettings.Value.DatabaseName}");
         }
 
         public async Task<List<User>> GetAsync() =>

@@ -12,7 +12,7 @@ public class House
     public string Name { get; set; }
 
     [BsonElement("user_ids")]
-    public List<string> UserIds { get; set; }
+    public List<string>? UserIds { get; set; }
 
     [BsonElement("plants")]
     public List<string> Plants { get; set; }

@@ -23,6 +23,9 @@ namespace GreenPath.Services
 
             _housesCollection = mongoDatabase.GetCollection<House>(
                 databaseSettings.Value.HousesCollectionName);
+               
+            Console.WriteLine($"Connecting to MongoDB at: {databaseSettings.Value.ConnectionString}");
+            Console.WriteLine($"Using database: {databaseSettings.Value.DatabaseName}");
         }
 
         public async Task<List<House>> GetAsync() =>
