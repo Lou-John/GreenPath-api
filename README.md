@@ -4,7 +4,14 @@ GreenPath est une application conçue pour aider les utilisateurs à gérer effi
 
 La source des données est l'api [Perenual](https://perenual.com/docs/api).
 
-L'app est séparée en trois services conteneurisés sur Docker.
+# Stack
+![.Net]( 	https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=whiteD)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) 
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 ## Fonctionnalités
 
