@@ -34,17 +34,17 @@ namespace GreenPath.Controllers
 
 
 
-      [HttpGet("external/{externalId}")]
-      public async Task<ActionResult<Plant>> GetByExternalId(string externalId)
+      [HttpGet("api")]
+      public async Task<string> GetApiKey()
       {
-         var plant = await _plantsService.GetByExternalIdAsync(externalId);
+         var api = await _plantsService.GetApiKeyAsync();
 
-         if (plant is null)
+         if (api is null)
          {
-            return NotFound();
+            return "API key not found";
          }
 
-         return plant;
+         return api;
       }
 
       [HttpPost]
@@ -87,18 +87,48 @@ namespace GreenPath.Controllers
          return NoContent();
       }
 
-      // From here on is the logic for the external API
-      [HttpGet("external-api/search")]
-      public async Task<IActionResult> GetPlantByName(string name)
+      [HttpGet("detail/{id:length(24)}")]
+      public async Task<IActionResult> GetPlantDetails(string id)
       {
-         var plant = await _plantsService.SearchByNameAsync(name);
-
+         var plant = await _plantsService.GetOrUpdatePlantByIdAsync(id);
          if (plant == null)
          {
-            return NotFound($"No plant with \'{name}\' found in the external API.");
+            return NotFound(new
+            {
+               Message = $"No plant with the ID '{id}' was found in the database.",
+               SearchedId = id
+            });
          }
 
-         return Ok(plant);
+         // Return the plant details
+         return Ok(new
+         {
+            Message = $"Found plant with ID '{id}'.",
+            Plant = plant
+         });
+      }
+
+      //From here on is the logic for the external API
+      [HttpGet("search")]
+      public async Task<IActionResult> GetPlantByName(string name)
+      {
+         var plants = await _plantsService.GetOrFetchByNameAsync(name);
+
+         if (plants == null || !plants.Any())
+         {
+            return NotFound(new
+            {
+               Message = $"No plants with the name '{name}' were found in the external API or the database.",
+               SearchedName = name
+            });
+         }
+
+         // Return the list of plants
+         return Ok(new
+         {
+            Message = $"Found {plants.Count} plant(s) with the name '{name}'.",
+            Plants = plants
+         });
       }
    }
 }
