@@ -9,13 +9,13 @@ public class House
     public string? Id { get; set; }
 
     [BsonElement("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [BsonElement("user_ids")]
     public List<string>? UserIds { get; set; }
 
     [BsonElement("plants")]
-    public List<string> Plants { get; set; }
+    public List<Plant>? Plants { get; set; }
 
     [BsonElement("created_at")]
     [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
