@@ -373,3 +373,4 @@ MigrationBackup/
 FodyWeavers.xsd
 compose.yaml
 Dockerfile
+.env
